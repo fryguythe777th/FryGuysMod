@@ -1,0 +1,5 @@
+displayName = Fry Guy's Modification
+author = fryguythe777th
+version = 0.1
+side = server
+homepage = https://discord.gg/USADHW29uJ
