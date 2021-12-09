@@ -28,6 +28,7 @@ namespace FryGuysMod.Items.Weapons
 			Item.rare = 2;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
+			Item.shoot = ProjectileType<TestEngineerProjectile>();
 		}
 
 		public override void AddRecipes()
@@ -36,6 +37,16 @@ namespace FryGuysMod.Items.Weapons
 			recipe.AddIngredient(ItemID.DirtBlock, 10);
 			recipe.AddTile(TileID.WorkBenches);
 			recipe.Register();
+		}
+	}
+	
+	public class TestEngineerProjectile : ModProjectile
+	{
+		public override void SetDefaults()
+		{
+			Projectile.friendly = true;
+			Projectile.penetrate = 2;
+			Projectile.DamageType = ModCOntent.GetInstance<EngineerDamage>();
 		}
 	}
 }
