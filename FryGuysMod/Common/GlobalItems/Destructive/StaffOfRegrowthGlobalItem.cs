@@ -12,7 +12,7 @@ namespace FryGuysMod.Common.GlobalItems
 	// See other GlobalItem classes in ExampleMod to see other ways that GlobalItem can be used.
 	public class StaffOfRegrowthGlobalItem : GlobalItem
 	{
-		// Here we make sure to only instance this GlobalItem for the Copper Shortsword, by checking item.type
+		
 		public override bool AppliesToEntity(Item item, bool lateInstatiation)
 		{
 			return item.type == ItemID.StaffofRegrowth;
