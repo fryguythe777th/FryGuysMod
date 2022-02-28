@@ -1,0 +1,3 @@
+displayName = Fry Guy's Modification
+author = fryguythe777th
+version = 0.1
