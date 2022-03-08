@@ -266,49 +266,55 @@ namespace FryGuysMod.Content.NPCs.TownNPCs
 			shop.item[nextSlot].SetDefaults(ItemID.SnowGlobe);
 			shop.item[nextSlot].shopCustomPrice = 150000;
 			nextSlot++;
+			
+			if(Main.dayTime)
+			{
+				shop.item[nextSlot].SetDefaults(ItemID.ChristmasTreeSword);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.Razorpine);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.ChainGun);
+				nextSlot++;
 
-			shop.item[nextSlot].SetDefaults(ItemID.ChristmasTreeSword);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.Razorpine);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.ChainGun);
-			nextSlot++;
-
-			shop.item[nextSlot].SetDefaults(ItemID.TheHorsemansBlade);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.BatScepter);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.StakeLauncher);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.Stake);
-			shop.item[nextSlot].shopCustomPrice = 800;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.RavenStaff);
-			nextSlot++;
-
-			shop.item[nextSlot].SetDefaults(ItemID.NorthPole);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.BlizzardStaff);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.SnowmanCannon);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.EldMelter);
-			nextSlot++;
-
-			shop.item[nextSlot].SetDefaults(ItemID.SpookyTwig);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.JackOLanternLauncher);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.JackOLantern);
-			shop.item[nextSlot].shopCustomPrice = 800;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.CandyCornRifle);
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.CandyCorn);
-			shop.item[nextSlot].shopCustomPrice = 800;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults(ItemID.ScytheWhip);
-			nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.TheHorsemansBlade);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.BatScepter);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.StakeLauncher);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.Stake);
+				shop.item[nextSlot].shopCustomPrice = 800;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.RavenStaff);
+				nextSlot++;
+			}
+			
+			if(!Main.dayTime)
+			{
+				shop.item[nextSlot].SetDefaults(ItemID.NorthPole);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.BlizzardStaff);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.SnowmanCannon);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.EldMelter);
+				nextSlot++;
+	
+				shop.item[nextSlot].SetDefaults(ItemID.SpookyTwig);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.JackOLanternLauncher);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.JackOLantern);
+				shop.item[nextSlot].shopCustomPrice = 800;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.CandyCornRifle);
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.CandyCorn);
+				shop.item[nextSlot].shopCustomPrice = 800;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.ScytheWhip);
+				nextSlot++;
+			}
 		}
 	}
 }
