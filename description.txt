@@ -1,0 +1,12 @@
+This mod is so w i p please for the love of god don't play it yet (i'm just releasing it to try and connect github to it b/c i don't know how and am too embarrassed to ask)
+
+-------------
+Holy crap! It's fryguythe777th!
+This mod is basically me figuring out coding while having fun at the same time.
+
+Right now all this mod adds is a class (SO original!) called the Engineer Class.
+When you play as an Engineer, you must balance two sides: Construction and Destruction.
+Construction refers to sentries, and so fair warning, ALL vanilla sentries are now switched from summon damage to engineer damage. There are also, of course, new sentries other than the vanilla ones.
+Destruction refers to any weapon with the potential to break blocks, as well as grenades. This includes all bombs and dynamite, which no longer have static damage and can deal crits.
+I'm going to add all my planned content for this class before working on anything else.
+-------------
