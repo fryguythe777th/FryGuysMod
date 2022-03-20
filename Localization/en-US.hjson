@@ -1,0 +1,19 @@
+
+Mods: {
+        FryGuysMod: {
+                      TownNPCMood: {
+                                      HolidayPlanner: {
+                                                        Content: I'm really happy right now! I'm ready to start decorating for something.
+							NoHome: Oh boy... the snow of Christmas will give me frostbite without a roof over my head.
+							LoveSpace: There's so much space here! I can make as big a Christmas tree as I want!
+							FarFromHome: I'm a little bit lost right now. I hope I haven't found myself in Sleepy Hollow.
+							DislikeCrowded: Holidays are best with lots of people! However, some of my neighbors are getting on my nerves a bit...
+							LikeBiome: The ruins of my former people... I am glad to be here, but something feels a little off.
+							LoveBiome: I love this biome! It makes me feel like it's the holiday season all year round!
+							LikeNPC: Ho, ho, ho! Santa Claus being around gets me in a festive mood!
+							LoveNPC: That Party Girl... Something about her makes my heart feel funny. She's so... celebratory.
+							HateNPC: Blech... that Tax Collector reminds me of an old story.
+                                      }
+                      }
+        }
+}
