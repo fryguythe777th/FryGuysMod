@@ -1,5 +1,6 @@
 using Terraria.ModLoader;
 using FryGuysMod.Common;
+using FryGuysMod.Content.NPCs.TownNPCs;
 
 namespace FryGuysMod
 {
@@ -11,6 +12,14 @@ namespace FryGuysMod
             FryGuySeason.CalendarFourthOfJuly = false;
             FryGuySeason.CalendarHalloween = false;
             FryGuySeason.CalendarXMas = false;
+        }
+	
+	public override void PostSetupContent()
+        {
+            if (ModLoader.TryGetMod("Census", out Mod census))
+            {
+                census.Call("TownNPCCondition", ModContent.NPCType<HolidayPlanner>(), "Defeat any post-Plantera holiday event");
+            }
         }
     }
 }
