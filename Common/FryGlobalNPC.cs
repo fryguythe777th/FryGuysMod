@@ -14,6 +14,7 @@ namespace FryGuysMod.Common
             if (npc.type == NPCID.WallofFlesh)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<EngineerEmblem>(), 7));
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<DemonTongue>(), 4));
                 //the "7" at the end refers to the drop chance and means that this is a 1/7 drop chance
             }
         }
