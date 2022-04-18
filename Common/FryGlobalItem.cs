@@ -6,6 +6,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
+using FryGuysMod.DamageClasses;
 
 namespace FryGuysMod.Common
 {
@@ -87,12 +88,51 @@ namespace FryGuysMod.Common
             }
         }
 
-        
-
         public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
         {
             if (Sets.IsHolidayItem[item.type])
                  tooltips.Add(new TooltipLine(Mod, "HolidayItemsDebug", "Can be instantly sold to the Holiday Planner"));
+
+            if (item.type == ItemID.Flamethrower || item.type == ItemID.EldMelter)
+            {
+                var line2 = new TooltipLine(Mod, "FryGlobalItem:DestructiveWarning", "Destructive Weapon")
+                {
+                    OverrideColor = new Color(255, 0, 0)
+                };
+                tooltips.Add(line2);
+
+                var line = new TooltipLine(Mod, "FryGlobalItem:CanBreakWood", "Can break wooden blocks.")
+                {
+                    OverrideColor = new Color(255, 0, 0)
+                };
+                tooltips.Add(line);
+            }
+        }
+
+        /* Mod aequus = ModLoader.GetMod("AQMod");
+
+        public override void SetDefaults(Item item)
+        {
+            if (aequus != null)
+            {
+                if (item.type = aequus.ItemType("LotusStaff"))
+                {
+                    item.DamageType = ModContent.GetInstance<EngineerDamage>();
+                }
+
+            }
+        } */
+
+        public override void SetDefaults(Item item)
+        {
+            if (item.sentry == true)
+            {
+                item.DamageType = ModContent.GetInstance<EngineerDamage>();
+            }
+            if (item.type == ItemID.EldMelter || item.type == ItemID.Flamethrower)
+            {
+                item.DamageType = ModContent.GetInstance<EngineerDamage>();
+            }
         }
     }
 }
