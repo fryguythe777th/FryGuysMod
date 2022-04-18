@@ -1,14 +1,17 @@
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace FryGuysMod.Content.Items.Weapons
+namespace FryGuysMod.Content.Items
 {
-	public class Gunpowder : ModItem
+	public class Gunpowder : FourthOfJulyItem
 	{
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Highly explosive. Keep in a cool area.");
+
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 		}
 
 		public override void SetDefaults()
@@ -16,6 +19,7 @@ namespace FryGuysMod.Content.Items.Weapons
 			Item.width = 40;
 			Item.height = 40;
 			//Item.value = 10000;
+			Item.maxStack = 999;
 			Item.rare = ItemRarityID.Green;
 		}
 	}
