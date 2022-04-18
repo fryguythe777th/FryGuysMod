@@ -4,19 +4,25 @@ using Terraria.ID;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using Terraria.GameContent.Creative;
 
 namespace FryGuysMod.Content.Items.Tools
 {
-    public class EagleHook : ModItem
+    public class EagleHook : FourthOfJulyItem
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("Rather fast hook with short range.");
+            Tooltip.SetDefault("Rather fast hook with short range.\n" +
+                "Knocks enemies upwards a significant amount when hit by the hook.");
+
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.AmethystHook);
+            Item.damage = 1;
+            Item.DamageType = DamageClass.Default;
             Item.shootSpeed = 11f;
             Item.shoot = ModContent.ProjectileType<EagleHookProjectile>();
         }
@@ -50,7 +56,7 @@ namespace FryGuysMod.Content.Items.Tools
 
         public override float GrappleRange()
         {
-            return 350;
+            return 270;
         }
 
         public override void NumGrappleHooks(Player player, ref int numHooks)
@@ -60,52 +66,24 @@ namespace FryGuysMod.Content.Items.Tools
 
         public override void GrappleRetreatSpeed(Player player, ref float speed)
         {
-            speed = 9f;
+            speed = 11f;
         }
 
         public override void GrapplePullSpeed(Player player, ref float speed)
         {
-            speed = 14;
+            speed = 10;
         }
 
         public override bool PreDrawExtras()
         {
-            Vector2 playerCenter = Main.player[Projectile.owner].MountedCenter;
-            Vector2 center = Projectile.Center;
-            Vector2 directionToPlayer = playerCenter - Projectile.Center;
-            float chainRotation = directionToPlayer.ToRotation() - MathHelper.PiOver2;
-            float distanceToPlayer = directionToPlayer.Length();
-
-            while (distanceToPlayer > 20f && !float.IsNaN(distanceToPlayer))
-            {
-                directionToPlayer /= distanceToPlayer;
-                directionToPlayer *= chainTexture.Height() - 1;
-                center += directionToPlayer;
-                directionToPlayer = playerCenter - center;
-                distanceToPlayer = directionToPlayer.Length();
-
-                Color drawColor = Lighting.GetColor((int)center.X / 16, (int)(center.Y / 16));
-
-                Main.EntitySpriteDraw(chainTexture.Value, center - Main.screenPosition, chainTexture.Value.Bounds, drawColor, chainRotation, chainTexture.Size() * 0.5f, 1f, SpriteEffects.None, 0);
-            }
+            FryGuyMethods.DrawProjectileChain(Projectile, -1, chainTexture);
 
             return false;
         }
 
         public override void OnHitNPC(NPC target, int damage, float knockBack, bool crit) // this doesnt work??
         {
-            var y = -12 + target.knockBackResist;
-
-            if (Main.LocalPlayer.kbGlove == true)
-            {
-                y -= 3;
-            }
-
-            if (y >= 0 || target.boss == true)
-            {
-                y = 0;
-            }
-            target.velocity = new Vector2(0, y);
+            FryGuyMethods.UpKnockback(Main.player[Projectile.owner], target, 12);
         }
     }
 }
