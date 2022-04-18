@@ -15,14 +15,19 @@ namespace FryGuysMod.Content.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-			player.accRunSpeed *= 1.4f;
 			player.moveSpeed *= 1.4f;
 			player.maxRunSpeed *= 1.2f;
 
 			if (player.buffTime[buffIndex] == 1)
-            {
+            		{
 				player.AddBuff(ModContent.BuffType<Content.Buffs.SugarCrashDebuff>(), 1800);
-            }
+           		}
 		}
-	}
+
+        	public override bool RightClick(int buffIndex)
+        	{
+			Main.player[Main.myPlayer].AddBuff(ModContent.BuffType<SugarCrashDebuff>(), 1800);
+			return true;
+        	}
+    }
 }
