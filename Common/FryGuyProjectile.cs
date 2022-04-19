@@ -21,6 +21,28 @@ namespace FryGuysMod.Common
 
             return true;
         }
+	
+	public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
+        {
+            Player player = Main.player[Main.myPlayer];
+            FryGuyPlayer modPlayer = player.GetModPlayer<FryGuyPlayer>();
+
+            if (modPlayer.HotLead == true && projectile.friendly && projectile.DamageType == DamageClass.Ranged)
+            {
+                target.AddBuff(BuffID.OnFire, 240, false);
+            }
+        }
+
+        public override void OnHitPvp(Projectile projectile, Player target, int damage, bool crit)
+        {
+            Player player = Main.player[Main.myPlayer];
+            FryGuyPlayer modPlayer = player.GetModPlayer<FryGuyPlayer>();
+
+            if (modPlayer.HotLead == true && projectile.friendly && projectile.DamageType == DamageClass.Ranged)
+            {
+                target.AddBuff(BuffID.OnFire, 240, false);
+            }
+        }
 
         public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
         {
