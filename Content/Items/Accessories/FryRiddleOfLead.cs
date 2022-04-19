@@ -12,7 +12,7 @@ namespace FryGuysMod.Content.Items.Accessories
         {
             DisplayName.SetDefault("Riddle of Lead");
 
-            Tooltip.SetDefault("Increased max life, damage, and speed.\n" +
+            Tooltip.SetDefault("Increased damage and speed.\n" +
                 "Chance to gain additional invincibility frames on hit when under 1/6 of your max life.");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -28,9 +28,9 @@ namespace FryGuysMod.Content.Items.Accessories
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             player.GetModPlayer<FryGuyPlayer>().RiddleOfLead = true;
-            player.statLifeMax += 30;
             player.GetDamage(DamageClass.Generic) *= 1.10f;
-            player.moveSpeed *= 1.10f;
+            player.moveSpeed *= 1.15f;
+            player.maxRunSpeed *= 1.15f;
         }
 
         public override void AddRecipes()
