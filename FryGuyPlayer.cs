@@ -104,7 +104,7 @@ namespace FryGuysMod
         	{
 			if (RiddleOfLead == true && Player.statLife <= Player.statLifeMax / 6 && Main.rand.NextBool())
             		{
-				Player.immuneTime += 240;
+				Player.immuneTime += 500;
             		}
         	}
 
@@ -112,7 +112,7 @@ namespace FryGuysMod
 		{
 			if (RiddleOfLead == true && Player.statLife <= Player.statLifeMax / 6 && Main.rand.NextBool())
 			{
-				Player.immuneTime += 240;
+				Player.immuneTime += 500;
 			}
 		}
     }
