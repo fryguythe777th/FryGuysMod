@@ -29,7 +29,7 @@ namespace FryGuysMod.Common
 
             if (modPlayer.HotLead == true && projectile.friendly && projectile.DamageType == DamageClass.Ranged)
             {
-                target.AddBuff(BuffID.OnFire, 240, false);
+                target.AddBuff(BuffID.OnFire, 100, false);
             }
         }
 
@@ -40,7 +40,7 @@ namespace FryGuysMod.Common
 
             if (modPlayer.HotLead == true && projectile.friendly && projectile.DamageType == DamageClass.Ranged)
             {
-                target.AddBuff(BuffID.OnFire, 240, false);
+                target.AddBuff(BuffID.OnFire, 100, false);
             }
         }
 
