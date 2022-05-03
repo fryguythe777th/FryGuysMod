@@ -30,6 +30,8 @@ namespace FryGuysMod.Content.Items.Placeables
 			Item.useTime = 10;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.consumable = true;
+			Item.rare = ItemRarityID.Lime;
+			Item.value = Item.sellPrice(gold: 5);
 			Item.createTile = ModContent.TileType<Content.Tiles.Calendar>();
         }
 
