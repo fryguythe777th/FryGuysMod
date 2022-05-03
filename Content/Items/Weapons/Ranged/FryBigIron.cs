@@ -33,7 +33,7 @@ namespace FryGuysMod.Content.Items.Weapons.Ranged
 			Item.knockBack = 4;
 			Item.value = 17500;
 			Item.rare = ItemRarityID.Green;
-			Item.UseSound = SoundID.Item164;
+			Item.UseSound = SoundID.Item11;
 			Item.autoReuse = false;
 			Item.shoot = ProjectileID.PurificationPowder;
 			Item.useAmmo = AmmoID.Bullet;
