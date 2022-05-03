@@ -23,8 +23,8 @@ namespace FryGuysMod.Content.Items.Weapons.Engineer
 
 		public override void SetDefaults()
 		{
-			Item.width = 40;
-			Item.height = 40;
+			Item.width = 30;
+			Item.height = 30;
 			Item.useTime = 10;
 			Item.useAnimation = 10;
 			Item.useStyle = 12;
