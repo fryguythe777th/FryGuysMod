@@ -22,6 +22,8 @@ namespace FryGuysMod.Content.Items.Consumables.Potions
             Item.UseSound = SoundID.Item3;
             Item.maxStack = 30;
             Item.consumable = true;
+            Item.rare = ItemRarityID.Blue;
+            Item.value = Item.sellPrice(silver: 2);
             Item.buffType = ModContent.BuffType<Content.Buffs.ConstructionPotionBuff>();
             Item.buffTime = 21600;
         }
