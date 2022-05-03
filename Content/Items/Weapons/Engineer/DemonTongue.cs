@@ -49,6 +49,8 @@ namespace FryGuysMod.Content.Items.Weapons.Engineer
             Item.DamageType = ModContent.GetInstance<EngineerDamage>();
             Item.shoot = ModContent.ProjectileType<DemonTongueTip>();
             Item.shootSpeed = 22f;
+            Item.value = Item.sellPrice(gold: 3);
+            Item.rare = ItemRarityID.LightRed;
         }
     }
 
