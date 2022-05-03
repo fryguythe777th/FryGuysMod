@@ -32,7 +32,7 @@ namespace FryGuysMod.Content.Items.Weapons.Melee
 			Item.useAnimation = 14;
 			Item.useStyle = ItemUseStyleID.Shoot;
 			Item.knockBack = 1;
-			Item.value = 10000;
+			Item.value = Item.sellPrice(silver: 20);
 			Item.rare = ItemRarityID.White;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
