@@ -6,11 +6,13 @@ using Microsoft.Xna.Framework;
 
 namespace FryGuysMod.Content.Items.Weapons.Melee
 {
-	public class EagleSword : ModItem
+	public class EagleSword : FourthOfJulyItem
 	{
 		public override void SetStaticDefaults()
 		{
 			Tooltip.SetDefault("Knocks enemies upwards when you hit them.");
+			
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -31,18 +33,7 @@ namespace FryGuysMod.Content.Items.Weapons.Melee
 
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-			var y = -6 + target.knockBackResist;
-
-			if (player.kbGlove == true)
-            {
-				y -= 2;
-            }
-
-			if(y >= 0 || target.boss == true)
-            {
-				y = 0;
-            }
-			target.velocity = new Vector2(0, y);
+		FryGuyMethods.UpKnockback(player, target, 6);
         }
     }
 }
