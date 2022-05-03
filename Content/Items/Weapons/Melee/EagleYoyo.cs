@@ -15,6 +15,8 @@ namespace FryGuysMod.Content.Items.Weapons.Melee
 			ItemID.Sets.Yoyo[Item.type] = true;
 			ItemID.Sets.GamepadExtraRange[Item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
+			
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults()
@@ -61,19 +63,7 @@ namespace FryGuysMod.Content.Items.Weapons.Melee
 
         public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
         {
-			var y = -3 + target.knockBackResist;
-
-			if(Main.LocalPlayer.kbGlove == true)
-            {
-				y -= 1;
-            }
-
-			if (y >= 0 || target.boss == true)
-            {
-				y = 0;
-            }
-
-			target.velocity = new Vector2(0, y);
+		FryGuyMethods.UpKnockback(Main.player[Projectile.owner], target, 3):
         }
     }
 }
