@@ -27,6 +27,8 @@ namespace FryGuysMod.Content.Items.Consumables
             Item.width = 26;
             Item.height = 24;
             Item.maxStack = 999;
+            Item.rare = ItemRarityID.Blue;
+            Item.value = Item.sellPrice(silver: 5);
         }
 
         public override bool CanRightClick()
