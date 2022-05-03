@@ -30,6 +30,8 @@ namespace FryGuysMod.Content.Items.Placeables
 			Item.useAnimation = 15;
 			Item.useTime = 10;
 			Item.useStyle = ItemUseStyleID.Swing;
+			Item.rare = ItemRarityID.Blue;
+			Item.value = Item.sellPrice(silver: 60);
 			Item.consumable = true;
 			Item.createTile = ModContent.TileType<Content.Tiles.AlloyStation>();
         }
