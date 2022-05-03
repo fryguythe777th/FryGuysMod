@@ -25,6 +25,8 @@ namespace FryGuysMod.Content.Items.Tools
             Item.DamageType = DamageClass.Default;
             Item.shootSpeed = 11f;
             Item.shoot = ModContent.ProjectileType<EagleHookProjectile>();
+            Item.value = Item.sellPrice(silver: 20);
+            Item.rare = ItemRarityID.White;
         }
     }
 
