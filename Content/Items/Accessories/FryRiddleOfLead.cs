@@ -23,6 +23,8 @@ namespace FryGuysMod.Content.Items.Accessories
             Item.width = 24;
             Item.height = 24;
             Item.accessory = true;
+            Item.rare = ItemRarityID.Pink;
+            Item.value = Item.sellPrice(gold: 10);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
