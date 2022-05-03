@@ -28,6 +28,8 @@ namespace FryGuysMod.Content.Items.Placeables
 			Item.useTime = 10;
 			Item.useStyle = ItemUseStyleID.Swing;
 			Item.consumable = true;
+			Item.rare = ItemRarityID.White;
+			Item.value = Item.sellPrice(silver: 5);
 			Item.createTile = ModContent.TileType<Content.Tiles.AmericanStarBlock>();
         }
     }
