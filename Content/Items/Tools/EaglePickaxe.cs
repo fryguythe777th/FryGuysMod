@@ -2,14 +2,17 @@ using Terraria;
 using Terraria.ModLoader;
 using Terraria.ID;
 using Microsoft.Xna.Framework;
+using Terraria.GameContent.Creative;
 
 namespace FryGuysMod.Content.Items.Tools
 {
-    public class EaglePickaxe : ModItem
+    public class EaglePickaxe : FourthOfJulyItem
     {
         public override void SetStaticDefaults()
         {
             Tooltip.SetDefault("A very light and fast pickaxe but with a rather short range.");
+
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
@@ -25,22 +28,13 @@ namespace FryGuysMod.Content.Items.Tools
             Item.UseSound = SoundID.Item1;
             Item.autoReuse = true;
             Item.pick = 49;
+            Item.value = Item.sellPrice(silver: 20);
+            Item.rare = ItemRarityID.White;
         }
 
         public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
         {
-            var y = -6 + target.knockBackResist;
-
-            if (player.kbGlove == true)
-            {
-                y -= 2;
-            }
-
-            if (y >= 0 || target.boss == true)
-            {
-                y = 0;
-            }
-            target.velocity = new Vector2(0, y);
+            FryGuyMethods.UpKnockback(player, target, 6);
         }
     }
 }
