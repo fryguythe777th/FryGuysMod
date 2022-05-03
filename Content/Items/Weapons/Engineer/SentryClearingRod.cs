@@ -34,9 +34,9 @@ namespace FryGuysMod.Content.Items.Weapons.Engineer
 			Item.shoot = ProjectileType<SentryClearingHelper>();
 			Item.shootSpeed = 1f;
 			Item.knockBack = 0;
-			Item.value = 10000;
-			Item.rare = 2;
-			Item.UseSound = SoundID.Item1;
+			Item.value = Item.sellPrice(silver: 20);
+			Item.rare = ItemRarityID.Blue;
+			Item.UseSound = SoundID.Item8;
 			Item.autoReuse = true;
 		}
 
