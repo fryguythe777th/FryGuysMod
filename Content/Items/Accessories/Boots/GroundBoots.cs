@@ -22,7 +22,7 @@ namespace FryGuysMod.Content.Items.Accessories.Boots
             Item.width = 28;
             Item.height = 28;
             Item.accessory = true;
-            Item.rare = ItemRarityID.Green
+            Item.rare = ItemRarityID.Green;
             Item.value = Item.buyPrice(gold: 3);
         }
 
