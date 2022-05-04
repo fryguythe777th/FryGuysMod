@@ -8,9 +8,9 @@ namespace FryGuysMod
 	public class FryGuyPlayer : ModPlayer
 	{
         public bool PyrotechnicBadge;
-	public bool SoldierHat;
-	public bool HotLead;
-	public bool RiddleOfLead;
+		public bool SoldierHat;
+		public bool HotLead;
+		public bool RiddleOfLead;
 
         public override void ResetEffects()
         {
@@ -24,7 +24,7 @@ namespace FryGuysMod
         {
 			if(PyrotechnicBadge == true)
             {
-				var source = target.GetSpawnSource_ForProjectile();
+				var source = target.GetSource_FromAI();
 				Vector2 velocity = new Vector2(0, 0);
 				var fireworkChance = WorldGen.genRand.Next(5);
 
@@ -64,7 +64,7 @@ namespace FryGuysMod
         {
 			if(PyrotechnicBadge == true)
             {
-				var source = proj.GetProjectileSource_FromThis();
+				var source = proj.GetSource_FromThis();
 				Vector2 velocity = new Vector2(0, 0);
 				var fireworkChance = WorldGen.genRand.Next(10);
 
@@ -99,14 +99,14 @@ namespace FryGuysMod
 				}
 			}
 		}
-		
-		public override void OnHitByNPC(NPC npc, int damage, bool crit)
-        	{
+
+        public override void OnHitByNPC(NPC npc, int damage, bool crit)
+        {
 			if (RiddleOfLead == true && Player.statLife <= Player.statLifeMax / 6 && Main.rand.NextBool())
-            		{
+            {
 				Player.immuneTime += 500;
-            		}
-        	}
+            }
+        }
 
 		public override void OnHitByProjectile(Projectile projectile, int damage, bool crit)
 		{
@@ -115,5 +115,5 @@ namespace FryGuysMod
 				Player.immuneTime += 500;
 			}
 		}
-    }
+	}
 }
