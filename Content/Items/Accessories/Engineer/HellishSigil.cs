@@ -9,8 +9,10 @@ namespace FryGuysMod.Content.Items.Accessories.Engineer
     {
         public override void SetStaticDefaults()
         {
-            Tooltip.SetDefault("3% increased engineer damage\n" +
+            Tooltip.SetDefault("+3 engineer damage\n" +
                 "Increases your max number of sentries by 1");
+                
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
         public override void SetDefaults()
@@ -18,12 +20,13 @@ namespace FryGuysMod.Content.Items.Accessories.Engineer
             Item.width = 28;
             Item.height = 28;
             Item.accessory = true;
-
+            Item.rare = ItemRarityID.Blue;
+            Item.value = Item.buyPrice(gold: 1);
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage<EngineerDamage>() *= 1.03f;
+            player.GetDamage<EngineerDamage>().Flat += 3;
             player.maxTurrets += 1;
         }
 
