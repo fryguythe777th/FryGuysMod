@@ -84,6 +84,26 @@ namespace FryGuysMod
             }
         }
 
+        public static Vector2 GetItemShootToMouse(Player player, Vector2 velocity)
+        {
+            float x = player.position.X - Main.MouseWorld.X;
+            float y = player.position.Y - Main.MouseWorld.Y;
+            float distance = (float)Math.Sqrt((x * x) + (y * y));
+
+            float angle1 = (float)Math.Acos(x / distance);
+
+            if (Math.Sign(player.position.Y - Main.MouseWorld.Y) == -1)
+            {
+                float angle2 = ((angle1 + MathHelper.ToRadians(90)) * -1) + MathHelper.ToRadians(180);
+                return new Vector2(0, 7).RotatedBy(angle2);
+            }
+            else
+            {
+                float angle2 = angle1 + MathHelper.ToRadians(90);
+                return new Vector2(0, 7).RotatedBy(angle2);
+            }
+        }
+
         public static void CheckDestructibility(int DestroyType, Vector2 oldVelocity, Projectile projectile)
             // DestroyTypes::: 1 = wood, 2 = sand, 3 = stone, 4 = dungeon, 5 = ash, 6 = mud, 7 = stone + dirt, 8 = moon stuff (left out for now), 9 = corrupt/crimson blocks
         {
